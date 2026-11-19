@@ -89,15 +89,7 @@ Abra o link HTTPS gerado no terminal. Para conferir o acesso externo, use os dad
 
 O pacote inclui a verificação em duas sessões de navegador por HTTP local. A ativação e o teste do link externo ficam para o computador da apresentação.
 
-## Como conferir os testes e a previsão
-
-Se mantiver a pasta opcional `testes/`, execute os dez testes a partir da pasta principal, com o ambiente Python ativo.
-
-```bash
-python -m unittest discover -s testes -v
-```
-
-Eles verificam os quatro casos pedidos na atividade, além da ordem das senhas, dos registros após reinício e de operações simultâneas. Os testes usam bancos temporários.
+## Como conferir a previsão
 
 Para treinar novamente com o CSV incluído e atualizar as métricas, execute este comando.
 
@@ -108,8 +100,6 @@ python previsao.py
 O CSV contém **2.500 exemplos simulados** de 50 sessões. As primeiras 40 sessões formam o treino e as últimas 10 formam o teste. A média histórica teve erro médio de **2,0576 minutos** e a regressão linear, de **1,9288 minuto**, nos 500 exemplos de teste. O relatório técnico do ZIP de entregáveis explica as contas e os limites da simulação.
 
 No painel, a média começa em cinco minutos como referência simulada. Depois, passa a usar os últimos cinco atendimentos concluídos. A regressão continua treinada com o CSV. Filas acima de 12 pessoas recebem um aviso porque ultrapassam o tamanho observado no treino.
-
-Se mantiver o arquivo opcional `diagnostico.py`, você pode medir o computador da apresentação. Deixe o sistema aberto e rode `python diagnostico.py` em outro terminal com o ambiente ativo. O resultado fica em `dados/diagnostico_local.json`. Para medir também a RAM do processo, acrescente `--pid NUMERO_DO_PROCESSO`, usando o PID mostrado no Gerenciador de Tarefas.
 
 ## Como enviar o trabalho
 
