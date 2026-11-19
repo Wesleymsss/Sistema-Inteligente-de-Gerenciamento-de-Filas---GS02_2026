@@ -1,0 +1,21 @@
+{
+  "origem": "Dados simulados com semente 2026",
+  "amostras_treino": 2000,
+  "amostras_teste": 500,
+  "sessoes_treino": "0 a 39",
+  "sessoes_teste": "40 a 49",
+  "mae_media_min": 2.0576,
+  "mae_ia_min": 1.9288,
+  "intercepto": 0.3626019542085608,
+  "coeficientes": [
+    2.1300957369563345,
+    0.6481488087957472,
+    0.8063523622645115
+  ],
+  "atributos": [
+    "pessoas_aguardando",
+    "pessoas_x_media_recente",
+    "residual_estimado_min"
+  ],
+  "maior_fila_treino": 12
+}

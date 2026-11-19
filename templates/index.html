@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Citizen Assist AI · Fila virtual</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/painel.js" defer></script>
+</head>
+<body>
+  <header><div class="brand">Citizen Assist AI</div><span class="connection" id="conexao" role="status">Conectando</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">BIBLIOTECA · BALCÃO ÚNICO</p><h1>Fila de atendimento</h1><p>Acompanhe as senhas e a espera para chegar agora.</p></div><p class="time" id="atualizacao">Carregando dados</p></div>
+    <section class="metrics" aria-label="Indicadores da fila">
+      <article><h2>Pessoas aguardando</h2><div class="value" id="aguardando">—</div><p>Atendimento por ordem de chegada</p></article>
+      <article class="primary"><h2>Espera estimada por IA</h2><div class="value"><span id="espera">—</span><small> min</small></div><p>Média histórica <strong id="espera-media">—</strong> min</p></article>
+      <article><h2>Atendimentos concluídos</h2><div class="value" id="concluidos">—</div><p>Total registrado neste banco</p></article>
+    </section>
+    <section class="workarea">
+      <article class="service"><h2>Controle do balcão</h2><div class="current"><p>EM ATENDIMENTO</p><strong id="senha-atual">Livre</strong><span id="inicio-atual">Aguardando a próxima chamada</span></div>
+        <div class="actions"><button id="chegada" class="solid">Registrar chegada</button><button id="iniciar">Iniciar atendimento</button><button id="concluir">Concluir atendimento</button></div>
+        <p id="mensagem" role="status" aria-live="polite">Os registros são salvos automaticamente.</p>
+      </article>
+      <article class="queue"><h2>Próximas senhas</h2><ol id="proximas"><li>Carregando</li></ol><p class="muted">Exibição das primeiras 10 pessoas aguardando.</p></article>
+    </section>
+    <section class="history"><div class="section-title"><h2>Registro de eventos</h2><a href="/api/eventos.csv">Baixar histórico CSV</a></div><div class="table-wrap"><table><thead><tr><th>Horário</th><th>Ação</th><th>Senha</th><th>Resultado</th></tr></thead><tbody id="eventos"></tbody></table></div></section>
+    <details><summary>Como a espera é calculada</summary><p id="origem-media"></p><p>A espera considera as pessoas aguardando e o tempo restante estimado do atendimento em curso. A regressão linear foi treinada com dados simulados. A referência convencional usa a média dos últimos cinco atendimentos locais, quando disponíveis.</p><p id="metricas-modelo"></p><p id="faixa-modelo"></p></details>
+  </main>
+  <footer>Computer Organization and Architecture · 1CC-FEV · Protótipo acadêmico</footer>
+</body>
+</html>

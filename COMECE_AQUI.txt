@@ -1,0 +1,44 @@
+COMO ABRIR O PROJETO
+Citizen Assist AI - Fila virtual
+
+1. Baixe o código pelo botão verde "Code" do GitHub e escolha "Download ZIP".
+   Extraia o arquivo com a opção "Extrair Tudo" do Windows.
+2. Abra a pasta extraída que contém app.py e requirements.txt.
+3. Dê dois cliques em iniciar_windows.bat.
+4. Aguarde a preparação. Na primeira vez, o programa baixa as bibliotecas.
+5. Com o programa rodando, abra este endereço no navegador.
+
+   http://127.0.0.1:5000
+
+Você precisa de Python 3.11 ou 3.12 de 64 bits no computador e de internet
+na primeira instalação. Deixe a janela do programa aberta enquanto usar
+o painel. Para encerrar, pressione Ctrl+C nessa janela.
+
+UM TESTE RÁPIDO
+
+- Clique em "Registrar chegada" três vezes. A fila deve mostrar 3 pessoas.
+- Clique em "Iniciar atendimento". A senha A001 vai para o balcão.
+- Espere alguns segundos e clique em "Concluir atendimento".
+- Repita o início e a conclusão para atender as outras duas senhas.
+- Clique em "Concluir atendimento" mais uma vez. O sistema deve bloquear
+  a tentativa, mantendo a fila em zero.
+
+A espera muda conforme a fila e os tempos registrados. Como esse teste
+é rápido, a média dos atendimentos também ficará baixa. Os exemplos
+usados para treinar a previsão estão identificados como simulados.
+
+ONDE ESTÁ CADA COISA
+
+O relatório em PDF e Word, o diagrama, as imagens dos testes, o guia do
+Logicly e o vídeo estão no ZIP de entregáveis fornecido à equipe.
+O vídeo tem 1 minuto e 17 segundos, com legendas.
+
+O código está nesta pasta, junto com os arquivos necessários para rodar.
+O README.md explica os comandos, o teste no celular e a publicação do código
+no GitHub. As instruções para Linux e macOS também estão nele.
+
+O circuito do Logicly está nas capturas e no guia de conexões. A versão
+online usada na montagem restringiu a exportação do arquivo nativo.
+
+O acesso pela internet exige ativar o túnel descrito no README. Para abrir
+o painel somente neste computador, basta seguir os cinco passos acima.
