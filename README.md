@@ -2,7 +2,7 @@
 
 Este projeto simula a fila de uma biblioteca com um balcão. Você registra a chegada, chama a próxima senha e conclui o atendimento pelos botões do painel. O sistema salva os horários, conta as pessoas aguardando e compara duas estimativas de espera.
 
-Este repositório reúne o código e os arquivos para executar e testar o sistema. O relatório, o diagrama, as imagens e o vídeo estão no ZIP de entregáveis fornecido à equipe. As instruções de execução estão neste README.
+Este repositório reúne o código e os arquivos para executar e testar o sistema. O relatório técnico, que inclui o diagrama de arquitetura, e o vídeo de demonstração são entregues separadamente. As instruções de execução estão neste README.
 
 ## Como abrir no computador
 
@@ -87,7 +87,7 @@ cloudflared tunnel --url http://localhost:5000
 
 Abra o link HTTPS gerado no terminal. Para conferir o acesso externo, use os dados móveis do celular, registre uma chegada no computador e veja a atualização no celular. O link funciona enquanto o programa e o túnel estiverem abertos. Qualquer pessoa com esse endereço pode usar os botões do protótipo.
 
-O pacote inclui a verificação em duas sessões de navegador por HTTP local. A ativação e o teste do link externo ficam para o computador da apresentação.
+Os testes registrados no relatório e no vídeo incluem a verificação em duas sessões de navegador por HTTP local. A ativação e o teste do link externo ficam para o computador da apresentação.
 
 ## Como conferir a previsão
 
@@ -97,15 +97,15 @@ Para treinar novamente com o CSV incluído e atualizar as métricas, execute est
 python previsao.py
 ```
 
-O CSV contém **2.500 exemplos simulados** de 50 sessões. As primeiras 40 sessões formam o treino e as últimas 10 formam o teste. A média histórica teve erro médio de **2,0576 minutos** e a regressão linear, de **1,9288 minuto**, nos 500 exemplos de teste. O relatório técnico do ZIP de entregáveis explica as contas e os limites da simulação.
+O CSV contém **2.500 exemplos simulados** de 50 sessões. As primeiras 40 sessões formam o treino e as últimas 10 formam o teste. A média histórica teve erro médio de **2,0576 minutos** e a regressão linear, de **1,9288 minuto**, nos 500 exemplos de teste. O relatório técnico enviado separadamente explica as contas e os limites da simulação.
 
 No painel, a média começa em cinco minutos como referência simulada. Depois, passa a usar os últimos cinco atendimentos concluídos. A regressão continua treinada com o CSV. Filas acima de 12 pessoas recebem um aviso porque ultrapassam o tamanho observado no treino.
 
 ## Como enviar o trabalho
 
-Inclua o link deste repositório na entrega junto com o relatório, o diagrama e o vídeo do ZIP de entregáveis. O `.gitignore` exclui o ambiente Python e o banco com os registros locais.
+Envie o link deste repositório, o relatório técnico em PDF e o vídeo de demonstração de até cinco minutos. O diagrama de arquitetura está incluído no relatório. O `.gitignore` exclui o ambiente Python e o banco com os registros locais.
 
-O ZIP de entregáveis também contém as capturas, a tabela verdade e o guia do circuito montado no Logicly. A versão online usada na montagem restringiu a exportação do arquivo nativo `.logicly`.
+O circuito montado no Logicly está documentado no relatório com a captura e a tabela verdade. A versão online usada na montagem restringiu a exportação do arquivo nativo `.logicly`.
 
 ## Documentação usada
 
