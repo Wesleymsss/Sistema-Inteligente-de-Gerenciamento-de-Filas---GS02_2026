@@ -2,20 +2,18 @@
 
 Este projeto simula a fila de uma biblioteca com um balcão. Você registra a chegada, chama a próxima senha e conclui o atendimento pelos botões do painel. O sistema salva os horários, conta as pessoas aguardando e compara duas estimativas de espera.
 
-Este repositório reúne o código e os arquivos para executar e testar o sistema. O relatório, o diagrama, as imagens e o vídeo estão no ZIP de entregáveis fornecido à equipe. Para começar, abra [COMECE_AQUI.txt](COMECE_AQUI.txt).
+Este repositório reúne o código e os arquivos para executar e testar o sistema. O relatório, o diagrama, as imagens e o vídeo estão no ZIP de entregáveis fornecido à equipe. As instruções de execução estão neste README.
 
-## Como abrir no Windows
+## Como abrir no computador
 
-Você precisa de **Python 3.11 ou 3.12 de 64 bits**. A primeira instalação também precisa de internet para baixar as bibliotecas.
+Você precisa de **Python 3.11 ou 3.12 de 64 bits** e de internet na primeira instalação.
 
-1. Extraia o ZIP e abra a pasta `Citizen_Assist_Filas`.
-2. Dê dois cliques em `iniciar_windows.bat`.
-3. Aguarde aparecer a mensagem de que o painel está disponível.
-4. Abra [http://127.0.0.1:5000](http://127.0.0.1:5000) no navegador.
+1. No GitHub, clique em **Code** e depois em **Download ZIP**.
+2. Extraia o arquivo e abra a pasta que contém `app.py` e `requirements.txt`.
+3. Siga a seção **Instalação pelos comandos**, abaixo.
+4. Com o programa rodando, abra [http://127.0.0.1:5000](http://127.0.0.1:5000) no navegador.
 
-Deixe a janela do programa aberta enquanto usa o painel. Para encerrar, pressione `Ctrl+C` nessa janela. Na próxima vez, basta abrir o mesmo arquivo `.bat`.
-
-Se aparecer um erro de instalação, confira a versão do Python e a conexão com a internet. Se a porta 5000 já estiver em uso, siga os comandos manuais abaixo e execute `python app.py --port 5001`. Nesse caso, abra `http://127.0.0.1:5001`.
+Deixe o terminal aberto enquanto usa o painel. Para encerrar, pressione `Ctrl+C`. Se a porta 5000 estiver ocupada, execute `python app.py --port 5001` e abra `http://127.0.0.1:5001`.
 
 ## Como testar os botões
 
@@ -29,17 +27,14 @@ Os tempos desses testes são curtos, então a média local ficará baixa. A espe
 
 O painel se atualiza a cada três segundos. Para conferir isso, abra o mesmo endereço em outra aba e registre uma chegada na primeira. Para salvar os eventos, clique em **Baixar histórico CSV**.
 
-## Onde encontrar os arquivos
+## Arquivos principais
 
 | Arquivo ou pasta | O que você encontra |
 | --- | --- |
-| `COMECE_AQUI.txt` | Passos rápidos para abrir e testar |
 | `app.py` | Regras da fila, banco de dados e comunicação com o painel |
 | `previsao.py` | Geração dos exemplos, treino e avaliação da previsão |
 | `templates/` e `static/` | Arquivos da interface web |
 | `dados/` | Exemplos simulados e avaliação do modelo |
-| `testes/` | Testes automatizados |
-| `diagnostico.py` | Medições do computador e da resposta do sistema |
 
 O banco `dados/fila.sqlite3` é criado ao abrir o programa pela primeira vez. Os registros ficam salvos ao fechar o projeto. Para fazer uma apresentação começando do zero, use um banco com outro nome pelos comandos manuais.
 
@@ -96,7 +91,7 @@ O pacote inclui a verificação em duas sessões de navegador por HTTP local. A 
 
 ## Como conferir os testes e a previsão
 
-Com o ambiente Python ativo, execute os dez testes a partir da pasta principal.
+Se mantiver a pasta opcional `testes/`, execute os dez testes a partir da pasta principal, com o ambiente Python ativo.
 
 ```bash
 python -m unittest discover -s testes -v
@@ -114,7 +109,7 @@ O CSV contém **2.500 exemplos simulados** de 50 sessões. As primeiras 40 sess�
 
 No painel, a média começa em cinco minutos como referência simulada. Depois, passa a usar os últimos cinco atendimentos concluídos. A regressão continua treinada com o CSV. Filas acima de 12 pessoas recebem um aviso porque ultrapassam o tamanho observado no treino.
 
-Para medir o computador da apresentação, deixe o sistema aberto e rode `python diagnostico.py` em outro terminal com o ambiente ativo. O resultado fica em `dados/diagnostico_local.json`. Para medir também a RAM do processo, acrescente `--pid NUMERO_DO_PROCESSO`, usando o PID mostrado no Gerenciador de Tarefas.
+Se mantiver o arquivo opcional `diagnostico.py`, você pode medir o computador da apresentação. Deixe o sistema aberto e rode `python diagnostico.py` em outro terminal com o ambiente ativo. O resultado fica em `dados/diagnostico_local.json`. Para medir também a RAM do processo, acrescente `--pid NUMERO_DO_PROCESSO`, usando o PID mostrado no Gerenciador de Tarefas.
 
 ## Como enviar o trabalho
 
